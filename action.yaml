@@ -57,9 +57,7 @@ runs:
           git add ${{ inputs.mainFolder }}$package/manifest.json
         done
 
-    - name: Commit version update
-      uses: EndBug/add-and-commit@v9
-      with:
-        message: "Update version from packages: ${{ inputs.packageFolders }}"
-      env:
-        GITHUB_TOKEN: ${{ inputs.github_token }}
+    - name: Version update completed
+      shell: bash
+      run: |
+        echo "Version update completed for packages: ${{ inputs.packageFolders }}"
